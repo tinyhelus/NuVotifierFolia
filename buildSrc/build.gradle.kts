@@ -7,20 +7,12 @@ repositories {
     mavenCentral()
     gradlePluginPortal()
     maven {
-        name = "sponge"
-        url = uri("https://repo.spongepowered.org/repository/maven-public/")
-    }
-    maven {
-        name = "fabric"
-        url = uri("https://maven.fabricmc.net/")
+        name = "PaperMC"
+        url = uri("https://repo.papermc.io/repository/maven-public/")
     }
 }
 
 dependencies {
-    implementation(gradleApi())
-    implementation("org.ajoberstar.grgit:grgit-gradle:4.1.1")
-    implementation("gradle.plugin.com.github.johnrengelman:shadow:7.1.2")
-    implementation("org.jfrog.buildinfo:build-info-extractor-gradle:4.27.1")
-    implementation("org.spongepowered:spongegradle-plugin-development:2.0.0")
-    implementation("net.fabricmc:fabric-loom:1.0-SNAPSHOT")
+    compileOnly "io.papermc.paper:paper-api:1.18.2" // e.g. 1.18.2, 1.20.4
+    compileOnly "com.velocitypowered:velocity-api:4.0.0" // e.g. 3.2.0
 }
